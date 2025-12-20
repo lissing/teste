@@ -1,0 +1,13 @@
+{
+  "name": "mta-stream-converter",
+  "version": "1.0.0",
+  "description": "Conversor de YouTube para MTA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ytdl-core": "latest"
+  }
+}

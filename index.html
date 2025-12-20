@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>MTA Music - Link Generator</title>
+    <style>
+        body { background: #0f0f0f; color: white; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { background: #1e1e1e; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); text-align: center; width: 90%; max-width: 500px; }
+        input { width: 80%; padding: 12px; margin: 20px 0; border-radius: 5px; border: 1px solid #333; background: #121212; color: white; }
+        button { background: #e02041; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        #result { margin-top: 20px; word-break: break-all; color: #00ff00; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Gerador de Link MTA</h2>
+        <p>Cole o link do YouTube abaixo:</p>
+        <input type="text" id="ytUrl" placeholder="https://www.youtube.com/watch?v=...">
+        <br>
+        <button onclick="gerar()">GERAR LINK DIRETO</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function gerar() {
+            const url = document.getElementById('ytUrl').value;
+            if(!url) return alert('Cole uma URL!');
+            const finalUrl = `${window.location.origin}/stream?url=${encodeURIComponent(url)}`;
+            document.getElementById('result').innerHTML = `<strong>Link para o rádio:</strong><br>${finalUrl}`;
+        }
+    </script>
+</body>
+</html>
